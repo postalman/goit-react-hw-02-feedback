@@ -1,27 +1,23 @@
-import { FeedbackOptions } from 'components/FeedbackOptions'
-import { Statistics } from 'components/Statistics'
-import { Section } from 'components/Sections'
+import { FeedbackOptions } from 'components/FeedbackOptions';
+import { Statistics } from 'components/Statistics';
+import { Section } from 'components/Sections';
 
 import React from 'react';
 
-
-export class App extends React.Component  {
+export class App extends React.Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  increment = (e) => {
-    
-    this.setState(
-      prevState => (
-        {[e.target.textContent]: prevState[e.target.textContent] + 1,}
-      )
-    )
-  }
+  increment = e => {
+    this.setState(prevState => ({
+      [e.target.textContent]: prevState[e.target.textContent] + 1,
+    }));
+  };
 
-   countTotalFeedback = () => {
+  countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
 
@@ -32,17 +28,23 @@ export class App extends React.Component  {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div
-        
-      >
+      <div>
         <Section title="Please leave feedback">
-        <FeedbackOptions options={this.state} onLeaveFeedback={this.increment}></FeedbackOptions>
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.increment}
+          ></FeedbackOptions>
         </Section>
-        <Section title="Statistics" >
-        <Statistics good={good} neutral={neutral} bad={bad} total={this.countTotalFeedback} positivePercentage={this.countPositiveFeedbackPercentage}></Statistics>
+        <Section title="Statistics">
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback}
+            positivePercentage={this.countPositiveFeedbackPercentage}
+          ></Statistics>
         </Section>
       </div>
     );
   }
 }
-
