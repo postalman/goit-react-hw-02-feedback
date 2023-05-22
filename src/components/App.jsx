@@ -1,6 +1,7 @@
 import { FeedbackOptions } from 'components/FeedbackOptions';
 import { Statistics } from 'components/Statistics';
 import { Section } from 'components/Sections';
+import { ContainerCSS } from 'components/Styles.styled';
 
 import React from 'react';
 
@@ -28,7 +29,7 @@ export class App extends React.Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div>
+      <ContainerCSS>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
@@ -44,7 +45,7 @@ export class App extends React.Component {
             positivePercentage={this.countPositiveFeedbackPercentage}
           ></Statistics>
         </Section>
-      </div>
+      </ContainerCSS>
     );
   }
 }

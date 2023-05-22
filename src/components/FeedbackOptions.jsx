@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
+import { BtnCSS, BtnCSS3, FeedbackCSS } from 'components/Styles.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
-      <button type="button" onClick={onLeaveFeedback}>
+    <FeedbackCSS>
+      <BtnCSS type="button" onClick={onLeaveFeedback}>
         {Object.keys(options)[0]}
-      </button>
-      <button type="button" onClick={onLeaveFeedback}>
+      </BtnCSS>
+      <BtnCSS type="button" onClick={onLeaveFeedback}>
         {Object.keys(options)[1]}
-      </button>
-      <button type="button" onClick={onLeaveFeedback}>
+      </BtnCSS>
+      <BtnCSS3 type="button" onClick={onLeaveFeedback}>
         {Object.keys(options)[2]}
-      </button>
-    </div>
+      </BtnCSS3>
+    </FeedbackCSS>
   );
 };
 
