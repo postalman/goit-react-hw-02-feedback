@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { BtnCSS, BtnCSS3, FeedbackCSS } from 'components/Styles.styled';
+import { BtnCSS, FeedbackCSS } from 'components/Styles.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (

@@ -29,14 +29,7 @@ export const BtnCSS = styled.button`
 
 `
 
-export const BtnCSS3 = styled.button`
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 30px;
-    
 
-`
 
 export const StatsCSS = styled.div`
     display: flex;
