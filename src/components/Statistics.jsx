@@ -9,19 +9,20 @@ export const Statistics = ({
   bad,
   total,
   positivePercentage,
-}) => {
-  return total() === 0 ? (
-    <Notification message="There is no feedback"></Notification>
+}) => (
+  total() === 0 ? (
+    <Notification message="There is no feedback" />
   ) : (
     <StatsCSS>
-      <p>Good:{good}</p>
-      <p>Neutral:{neutral}</p>
-      <p>Bad:{bad}</p>
-      <p>Total:{total()}</p>
-      <p>Positive feeback:{positivePercentage()}%</p>
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad}</p>
+      <p>Total: {total()}</p>
+      <p>Positive feeback: {positivePercentage()}%</p>
     </StatsCSS>
-  );
-};
+  )
+);
+
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
